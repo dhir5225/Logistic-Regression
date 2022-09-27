@@ -20,7 +20,29 @@ Similar to linear regression, logistic regression is also used to estimate the r
 
 While both models are used in regression analysis to make predictions about future outcomes, linear regression is typically easier to understand. Linear regression also does not require as large of a sample size as logistic regression needs an adequate sample to represent values across all the response categories. Without a larger, representative sample, the model may not have sufficient statistical power to detect a significant effect.
 
+###bImplement linear equation
+
+Logistic Regression algorithm works by implementing a linear equation with independent or explanatory variables to predict a response value. For example, we consider the example of number of hours studied and probability of passing the exam. Here, number of hours studied is the explanatory variable and it is denoted by x1. Probability of passing the exam is the response or target variable and it is denoted by z.
+
+If we have one explanatory variable (x1) and one response variable (z), then the linear equation would be given mathematically with the following equation-
+
+z = β0 + β1x1  
+
+Here, the coefficients β0 and β1 are the parameters of the model.
+
+If there are multiple explanatory variables, then the above equation can be extended to
+
+z = β0 + β1x1+ β2x2+……..+ βnxn
+
+Here, the coefficients β0, β1, β2 and βn are the parameters of the model.
+
+So, the predicted response value is given by the above equations and is denoted by z.
+
 ### Logistic Function (Sigmoid Function):
+
+This predicted response value, denoted by z is then converted into a probability value that lie between 0 and 1. We use the sigmoid function in order to map predicted values to probability values. 
+
+In machine learning, sigmoid function is used to map predictions to probabilities. The sigmoid function has an S shaped curve. It is also called sigmoid curve.
 
 1.The sigmoid function is a mathematical function used to map the predicted values to probabilities.
 
@@ -36,11 +58,30 @@ While both models are used in regression analysis to make predictions about futu
 
 Image-Formula of a sigmoid function 
 
+### Decision boundary
+
+
+The sigmoid function returns a probability value between 0 and 1. This probability value is then mapped to a discrete class which is either “0” or “1”. In order to map this probability value to a discrete class (pass/fail, yes/no, true/false), we select a threshold value. This threshold value is called Decision boundary. Above this threshold value, we will map the probability values into class 1 and below which we will map values into class 0.
+
+Mathematically, it can be expressed as follows:-
+
+p ≥ 0.5 => class = 1
+
+p < 0.5 => class = 0
+
+Generally, the decision boundary is set to 0.5. So, if the probability value is 0.8 (> 0.5), we will map this observation to class 1. Similarly, if the probability value is 0.2 (< 0.5), we will map this observation to class 0. This is represented in the graph below-
+
+![image](https://user-images.githubusercontent.com/109084435/192536223-8033550f-145b-414e-b5af-08a7b2934686.png)
+
 ### Assumptions for Logistic Regression:
 
 1.The dependent variable must be categorical in nature.
 
 2.The independent variable should not have multi-collinearity.
+
+3.It requires the observations to be independent of each other. So, the observations should not come from repeated measurements.
+
+4.Logistic Regression model assumes linearity of independent variables and log odds.
 
 ### What Are the Types of Logistic Regression?
 
